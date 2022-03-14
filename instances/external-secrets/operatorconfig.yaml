@@ -1,0 +1,23 @@
+apiVersion: operator.external-secrets.io/v1alpha1
+kind: OperatorConfig
+metadata:
+  annotations:
+    operator-sdk/primary-resource: /cluster-external-secrets-controller
+    operator-sdk/primary-resource-type: ClusterRoleBinding.rbac.authorization.k8s.io
+  creationTimestamp: "2022-03-14T17:51:10Z"
+  finalizers:
+  - helm.sdk.operatorframework.io/uninstall-release
+  name: cluster
+  namespace: external-secrets
+spec:
+  prometheus:
+    enabled: true
+    service:
+      port: 8080
+  resources:
+    limits:
+      cpu: 100m
+      memory: 256Mi
+    requests:
+      cpu: 10m
+      memory: 96Mi
