@@ -1,5 +1,5 @@
 apiVersion: external-secrets.io/v1alpha1
-kind: SecretStore
+kind: ClusterSecretStore
 metadata:
   name: ibm-secretstore
   namespace: openshift-operators
