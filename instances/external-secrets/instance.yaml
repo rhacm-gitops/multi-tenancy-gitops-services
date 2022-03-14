@@ -1,0 +1,17 @@
+apiVersion: external-secrets.io/v1alpha1
+kind: SecretStore
+metadata:
+  name: ibm-secretstore
+  namespace: openshift-operators
+spec:
+  provider:
+    ibm:
+      auth:
+        secretRef:
+          secretApiKeySecretRef:
+            name: ibmcloud-credentials
+            namespace: kube-system
+            key: ibmcloud_api_key
+      serviceUrl: >-
+        https://640fe8e5-7112-41f2-907e-a94256df6d64.private.us-south.secrets-manager.appdomain.cloud
+  controller: dev
