@@ -12,6 +12,7 @@ rules:
       - create
       - list
       - delete
+      - patch
   # - verbs:
   #     - '*'
   #   apiGroups:
@@ -19,19 +20,6 @@ rules:
   #   resources:
   #     - placementrules
   #     - subscriptions
-  # - verbs:
-  #     - '*'
-  #   apiGroups:
-  #     - external-secrets.io
-  #   resources:
-  #     - clustersecretstores
-  #     - externalsecrets
-  # - verbs:
-  #     - '*'
-  #   apiGroups:
-  #     - operator.external-secrets.io
-  #   resources:
-  #     - operatorconfigs
   # - verbs:
   #     - '*'
   #   apiGroups:
