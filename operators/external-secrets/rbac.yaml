@@ -13,6 +13,7 @@ rules:
       - update
       - list
       - delete
+      - patch
   - apiGroups:
       - operator.external-secrets.io
     resources:
@@ -22,6 +23,7 @@ rules:
       - update
       - list
       - delete
+      - patch
 ---
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
