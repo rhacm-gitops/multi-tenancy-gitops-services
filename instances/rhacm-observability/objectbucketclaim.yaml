@@ -1,12 +1,13 @@
 apiVersion: objectbucket.io/v1alpha1
 kind: ObjectBucketClaim
 metadata:
-  name: rhacm-observability-claim
+  name: rhacm-observability-obc
   namespace: open-cluster-management-observability
   annotations:
     argocd.argoproj.io/sync-wave: "200"
 spec:
   additionalConfig:
     bucketclass: noobaa-default-bucket-class
-  objectBucketName: rhacm-observability
+  generateBucketName: rhacm-observability
+  objectBucketName: rhacm-observability-obc
   storageClassName: openshift-storage.noobaa.io
