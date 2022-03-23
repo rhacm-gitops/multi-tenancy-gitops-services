@@ -47,22 +47,22 @@ rules:
       - list
       - delete
       - patch
-  # - verbs:
-  #     - '*'
-  #   apiGroups:
-  #     - agent.open-cluster-management.io
-  #   resources:
-  #     - klusterletaddonconfigs
-  # - verbs:
-  #     - '*'
-  #   apiGroups:
-  #     - cluster.open-cluster-management.io
-  #   resources:
-  #     - managedclusters
-  #     - managedclusters/accept
-  #     - managedclusters/status
-  #     - managedclustersets
-  #     - managedclustersets/join
+  - apiGroups:
+      - agent.open-cluster-management.io
+    resources:
+      - klusterletaddonconfigs
+    verbs:
+      - '*'
+  - apiGroups:
+      - cluster.open-cluster-management.io
+    verbs:
+      - '*'
+    resources:
+      - managedclusters
+      - managedclusters/accept
+      - managedclusters/status
+      - managedclustersets
+      - managedclustersets/join
   # - verbs:
   #     - '*'
   #   apiGroups:
