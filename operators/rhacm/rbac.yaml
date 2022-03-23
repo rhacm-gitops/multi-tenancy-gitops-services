@@ -36,13 +36,17 @@ rules:
       - list
       - delete
       - patch
-  # - verbs:
-  #     - '*'
-  #   apiGroups:
-  #     - hive.openshift.io
-  #   resources:
-  #     - machinepools
-  #     - clusterdeployments
+  - apiGroups:
+      - hive.openshift.io
+    resources:
+      - machinepools
+      - clusterdeployments
+    verbs:
+      - update
+      - create
+      - list
+      - delete
+      - patch
   # - verbs:
   #     - '*'
   #   apiGroups:
