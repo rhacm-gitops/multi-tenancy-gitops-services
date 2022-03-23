@@ -63,25 +63,25 @@ rules:
       - managedclusters/status
       - managedclustersets
       - managedclustersets/join
+  - apiGroups:
+      - internal.open-cluster-management.io
+    resources:
+      - managedclusterinfos
+    verbs:
+      - '*'
+  - apiGroups:
+      - register.open-cluster-management.io
+    resources:
+      - managedclusters/accept
+    verbs:
+      - '*'
   # - verbs:
   #     - '*'
   #   apiGroups:
   #     - apps.open-cluster-management.io
   #   resources:
   #     - channels
-  # - apiGroups:
-  #     - internal.open-cluster-management.io
-  #   resources:
-  #     - managedclusterinfos
-  #   verbs:
-  #     - '*'
-  # - apiGroups:
-  #   - register.open-cluster-management.io
-  #   resources:
-  #   - managedclusters/accept
-  #   verbs:
-  #   - '*'
-  # - apiGroups:
+  - apiGroups:
   #   - klusterletaddonconfigs.agent.open-cluster-management.io
   #   - manageclusters.cluster.open-cluster-management.io
   #   - managedclusteractions.action.open-cluster-management.io
