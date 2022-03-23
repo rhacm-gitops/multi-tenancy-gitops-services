@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "203"
     helm.sh/hook-weight: "203"
 spec:
-  enableDownSampling: true
+  enableDownsampling: true
   imagePullPolicy: Always
   imagePullSecret: multiclusterhub-operator-pull-secret
   observabilityAddonSpec:
