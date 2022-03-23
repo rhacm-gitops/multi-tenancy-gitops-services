@@ -91,6 +91,15 @@ rules:
       - list
       - delete
       - patch
+  - apiGroups:
+      - objectbucket.io
+    resources:
+      - objectbucketclaims
+    verbs:
+      - update
+      - create
+      - list
+      - delete
   # - verbs:
   #     - '*'
   #   apiGroups:
