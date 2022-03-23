@@ -15,7 +15,7 @@ spec:
   retentionResolution1h: 30d
   retentionResolution5m: 14d
   retentionResolutionRaw: 5d
-  storageConfigObject:
+  storageConfig:
     metricObjectStorage:
       name: thanos-object-storage
       key: thanos.yaml
