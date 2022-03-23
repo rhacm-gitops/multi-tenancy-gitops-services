@@ -16,8 +16,7 @@ spec:
     metricObjectStorage:
       name: thanos-object-storage
       key: thanos.yaml
-  storageConfigObject:
-    statefulSetStorageClass: ocs-storagecluster-ceph-rbd
+    storageClass: ocs-storagecluster-ceph-rbd
   advanced:
     retentionConfig:
       blockDuration: 2h
