@@ -13,13 +13,29 @@ rules:
       - list
       - delete
       - patch
-  # - verbs:
-  #     - '*'
-  #   apiGroups:
-  #     - apps.open-cluster-management.io
-  #   resources:
-  #     - placementrules
-  #     - subscriptions
+  - apiGroups:
+      - policy.open-cluster-management.io 
+    resources:
+      - policies
+      - placementbindings
+    verbs:
+      - update
+      - create
+      - list
+      - delete
+      - patch
+  - apiGroups:
+      - apps.open-cluster-management.io
+    resources:
+      - placementrules
+      - subscriptions
+      - channels
+    verbs:
+      - update
+      - create
+      - list
+      - delete
+      - patch
   # - verbs:
   #     - '*'
   #   apiGroups:
@@ -43,13 +59,6 @@ rules:
   #     - managedclusters/status
   #     - managedclustersets
   #     - managedclustersets/join
-  # - verbs:
-  #     - '*'
-  #   apiGroups:
-  #     - policy.open-cluster-management.io 
-  #   resources:
-  #     - policies
-  #     - placementbindings
   # - verbs:
   #     - '*'
   #   apiGroups:
