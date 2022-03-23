@@ -5,6 +5,7 @@ metadata:
   namespace: open-cluster-management-observability
   annotations:
     argocd.argoproj.io/sync-wave: "200"
+    argocd.argoproj.io/hook: PreSync
 spec:
   additionalConfig:
     bucketclass: noobaa-default-bucket-class
