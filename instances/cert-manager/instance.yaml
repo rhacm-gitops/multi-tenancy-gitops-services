@@ -1,6 +1,6 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: example-clusterissuer
+  name: cert-manager-cntk
 spec:
   selfSigned: {}
