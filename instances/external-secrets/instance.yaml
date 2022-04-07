@@ -13,4 +13,4 @@ spec:
             namespace: kube-system
             key: ibmcloud_api_key
       serviceUrl: >-
-        https://640fe8e5-7112-41f2-907e-a94256df6d64.private.us-south.secrets-manager.appdomain.cloud
+        https://640fe8e5-7112-41f2-907e-a94256df6d64.us-south.secrets-manager.appdomain.cloud
