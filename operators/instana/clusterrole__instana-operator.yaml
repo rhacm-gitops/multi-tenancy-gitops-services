@@ -4,7 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/component: operator
     app.kubernetes.io/name: instana
-    app.kubernetes.io/version: 219-0
+    app.kubernetes.io/version: 221-0
   name: instana-operator
   annotations:
     argocd.argoproj.io/sync-wave: "200"
@@ -208,6 +208,32 @@ rules:
       - instana.io
     resources:
       - cores/status
+    verbs:
+      - get
+      - patch
+      - update
+  - apiGroups:
+      - instana.io
+    resources:
+      - datastores
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - instana.io
+    resources:
+      - datastores/finalizers
+    verbs:
+      - update
+  - apiGroups:
+      - instana.io
+    resources:
+      - datastores/status
     verbs:
       - get
       - patch

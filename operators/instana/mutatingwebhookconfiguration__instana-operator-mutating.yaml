@@ -5,10 +5,11 @@ metadata:
     cert-manager.io/inject-ca-from: instana-operator/instana-operator-webhook-certs
     argocd.argoproj.io/sync-wave: "200"
     helm.sh/hook-weight: "200"
+
   labels:
     app.kubernetes.io/component: operator
     app.kubernetes.io/name: instana
-    app.kubernetes.io/version: 219-0
+    app.kubernetes.io/version: 221-0
   name: instana-operator-mutating
 webhooks:
   - admissionReviewVersions:
@@ -18,14 +19,14 @@ webhooks:
       service:
         name: instana-operator
         namespace: instana-operator
-        path: /mutate-instana-io-v1beta1-core
+        path: /mutate-instana-io-v1beta2-core
     failurePolicy: Fail
     name: mcore.kb.io
     rules:
       - apiGroups:
           - instana.io
         apiVersions:
-          - v1beta1
+          - v1beta2
         operations:
           - CREATE
           - UPDATE

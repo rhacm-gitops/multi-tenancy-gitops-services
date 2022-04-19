@@ -4,13 +4,12 @@ metadata:
   labels:
     app.kubernetes.io/component: operator
     app.kubernetes.io/name: instana
-    app.kubernetes.io/version: 219-0
+    app.kubernetes.io/version: 221-0
   name: instana-operator
   namespace: instana-operator
   annotations:
     argocd.argoproj.io/sync-wave: "210"
     helm.sh/hook-weight: "210"
-    
 spec:
   replicas: 1
   selector:
@@ -22,10 +21,8 @@ spec:
       labels:
         app.kubernetes.io/component: operator
         app.kubernetes.io/name: instana
-        app.kubernetes.io/version: 219-0
+        app.kubernetes.io/version: 221-0
     spec:
-      imagePullSecrets:
-        - name: instana-pullsecret
       containers:
         - env:
             - name: WATCH_NAMESPACE
@@ -40,7 +37,7 @@ spec:
                 fieldRef:
                   apiVersion: v1
                   fieldPath: metadata.namespace
-          image: containers.instana.io/instana/release/selfhosted/operator:219-0
+          image: containers.instana.io/instana/release/selfhosted/operator:221-0
           imagePullPolicy: IfNotPresent
           name: instana-operator
           ports:
@@ -67,16 +64,13 @@ spec:
               drop:
                 - ALL
             readOnlyRootFilesystem: true
+            runAsNonRoot: true
           volumeMounts:
             - mountPath: /tmp
               name: tmpdir
             - mountPath: /etc/websocket/certs
               name: cert
               readOnly: true
-      securityContext:
-        runAsGroup: 65532
-        runAsNonRoot: true
-        runAsUser: 65532
       serviceAccountName: instana-operator
       volumes:
         - emptyDir: {}
