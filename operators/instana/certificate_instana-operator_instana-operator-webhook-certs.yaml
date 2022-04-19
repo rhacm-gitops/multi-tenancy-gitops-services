@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  labels:
+    app.kubernetes.io/component: operator
+    app.kubernetes.io/name: instana
+    app.kubernetes.io/version: 219-0
+  name: instana-operator-webhook-certs
+  namespace: instana-operator
+spec:
+  dnsNames:
+    - instana-operator.instana-operator
+    - instana-operator.instana-operator.svc
+  issuerRef:
+    kind: Issuer
+    name: instana-operator
+  secretName: instana-operator-webhook-certs
+  subject:
+    organizations:
+      - instana

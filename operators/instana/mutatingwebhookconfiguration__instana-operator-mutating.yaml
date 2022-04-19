@@ -1,0 +1,32 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  annotations:
+    cert-manager.io/inject-ca-from: instana-operator/instana-operator-webhook-certs
+  labels:
+    app.kubernetes.io/component: operator
+    app.kubernetes.io/name: instana
+    app.kubernetes.io/version: 219-0
+  name: instana-operator-mutating
+webhooks:
+  - admissionReviewVersions:
+      - v1
+      - v1beta1
+    clientConfig:
+      service:
+        name: instana-operator
+        namespace: instana-operator
+        path: /mutate-instana-io-v1beta1-core
+    failurePolicy: Fail
+    name: mcore.kb.io
+    rules:
+      - apiGroups:
+          - instana.io
+        apiVersions:
+          - v1beta1
+        operations:
+          - CREATE
+          - UPDATE
+        resources:
+          - cores
+    sideEffects: None

@@ -1,0 +1,53 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  annotations:
+    cert-manager.io/inject-ca-from: instana-operator/instana-operator-webhook-certs
+  labels:
+    app.kubernetes.io/component: operator
+    app.kubernetes.io/name: instana
+    app.kubernetes.io/version: 219-0
+  name: instana-operator-validating
+webhooks:
+  - admissionReviewVersions:
+      - v1
+      - v1beta1
+    clientConfig:
+      service:
+        name: instana-operator
+        namespace: instana-operator
+        path: /validate-instana-io-v1beta1-core
+    failurePolicy: Fail
+    name: vcore.kb.io
+    rules:
+      - apiGroups:
+          - instana.io
+        apiVersions:
+          - v1beta1
+        operations:
+          - CREATE
+          - UPDATE
+        resources:
+          - cores
+    sideEffects: None
+  - admissionReviewVersions:
+      - v1
+      - v1beta1
+    clientConfig:
+      service:
+        name: instana-operator
+        namespace: instana-operator
+        path: /validate-instana-io-v1beta1-unit
+    failurePolicy: Fail
+    name: vunit.kb.io
+    rules:
+      - apiGroups:
+          - instana.io
+        apiVersions:
+          - v1beta1
+        operations:
+          - CREATE
+          - UPDATE
+        resources:
+          - units
+    sideEffects: None

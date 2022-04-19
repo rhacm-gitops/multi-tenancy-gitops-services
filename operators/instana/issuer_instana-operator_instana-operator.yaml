@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  labels:
+    app.kubernetes.io/component: operator
+    app.kubernetes.io/name: instana
+    app.kubernetes.io/version: 219-0
+  name: instana-operator
+  namespace: instana-operator
+spec:
+  selfSigned: {}
