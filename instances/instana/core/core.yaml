@@ -85,7 +85,7 @@ spec:
   componentConfigs:
     - name: testing
       properties:
-        - name: config.selfhosted.docker.aggregator.available
+        - name: "config.selfhosted.docker.aggregator.available"
           value: "false"
 # %{ if toggle("config.selfhosted.docker.aggregator.available", "false") == "true" }
 # beeInstanaConfig:
