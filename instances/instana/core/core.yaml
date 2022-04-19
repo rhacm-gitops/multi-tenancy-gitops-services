@@ -10,6 +10,12 @@ spec:
   baseDomain: apps.rhacm-gitops.ibmglb.ibm-gtmaa.dev
   imagePullSecrets:
     - name: instana-pullsecret
+  emailConfig:
+    smtpConfig:
+      from: smtp@example.com
+      host: smtp.example.com
+      port: 465
+      useSSL: true
   enableNetworkPolicies: false
   resourceProfile: large
   agentAcceptorConfig:
