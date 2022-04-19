@@ -22,21 +22,58 @@ spec:
     host: ingress-instana.apps.rhacm-gitops.ibmglb.ibm-gtmaa.dev
     port: 443
   datastoreConfigs:
-    - type: cassandra
-      addresses:
+    - addresses:
         - cassandra-service.instana-core.svc.cluster.local
-    - type: cockroachdb
-      addresses:
-        - cockroachdb-service.instana-core.svc.cluster.local
-    - type: clickhouse
-      addresses:
+      ports:
+        - name: tcp
+          port: 9042
+      schemas:
+        - spans
+        - metrics
+        - profiles
+      type: cassandra
+    - addresses:
         - clickhouse-service.instana-core.svc.cluster.local
-    - type: elasticsearch
-      addresses:
+      clusterName: local
+      ports:
+        - name: tcp
+          port: 9000
+        - name: http
+          port: 8123
+      schemas:
+        - application
+        - logs
+      type: clickhouse
+    - addresses:
+        - cockroachdb-service.instana-core.svc.cluster.local
+      ports:
+        - name: tcp
+          port: 26257
+      schemas:
+        - butlerdb
+        - tenantdb
+        - sales
+      type: cockroachdb
+    - addresses:
         - elasticsearch-service.instana-core.svc.cluster.local
-    - type: kafka
-      addresses:
+      clusterName: onprem_onprem
+      ports:
+        - name: tcp
+          port: 9300
+        - name: http
+          port: 9200
+      schemas:
+        - metadata_ng
+      type: elasticsearch
+    - addresses:
         - kafka-service.instana-core.svc.cluster.local
+      ports:
+        - name: tcp
+          port: 9092
+      schemas:
+        - ingress
+        - global-ingress
+      type: kafka
   rawSpansStorageConfig:
     pvcConfig:
       accessModes:
