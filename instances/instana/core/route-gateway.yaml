@@ -8,6 +8,9 @@ metadata:
     instana.io/group: service
   name: gateway
   namespace: instana-core
+  annotations:
+    argocd.argoproj.io/sync-wave: "230"
+    helm.sh/hook-weight: "230"
 spec:
   host: unit0-tenant0.apps.rhacm-gitops.ibmglb.ibm-gtmaa.dev
   port:

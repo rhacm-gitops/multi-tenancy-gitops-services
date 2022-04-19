@@ -3,6 +3,9 @@ kind: Core
 metadata:
   namespace: instana-core
   name: instana-core
+  annotations:
+    argocd.argoproj.io/sync-wave: "220"
+    helm.sh/hook-weight: "220"
 spec:
   baseDomain: apps.rhacm-gitops.ibmglb.ibm-gtmaa.dev
   imagePullSecrets:

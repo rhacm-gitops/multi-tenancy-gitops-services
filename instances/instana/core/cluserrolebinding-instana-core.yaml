@@ -3,6 +3,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: instana-core-anyuid
+  annotations:
+    argocd.argoproj.io/sync-wave: "200"
+    helm.sh/hook-weight: "200"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
