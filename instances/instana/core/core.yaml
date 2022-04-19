@@ -84,7 +84,7 @@ spec:
       storageClassName: ocs-storagecluster-cephfs 
   featureFlags:
     - enabled: false
-      name: config.selfhosted.docker.aggregator.available
+      name: aggregator.available
 
 # %{ if toggle("config.selfhosted.docker.aggregator.available", "false") == "true" }
 # beeInstanaConfig:
