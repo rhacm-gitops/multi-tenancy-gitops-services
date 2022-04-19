@@ -7,6 +7,10 @@ metadata:
     app.kubernetes.io/version: 219-0
   name: instana-operator
   namespace: instana-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "210"
+    helm.sh/hook-weight: "210"
+    
 spec:
   replicas: 1
   selector:

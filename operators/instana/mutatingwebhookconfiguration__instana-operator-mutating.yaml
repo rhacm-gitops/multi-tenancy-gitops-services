@@ -3,6 +3,8 @@ kind: MutatingWebhookConfiguration
 metadata:
   annotations:
     cert-manager.io/inject-ca-from: instana-operator/instana-operator-webhook-certs
+    argocd.argoproj.io/sync-wave: "200"
+    helm.sh/hook-weight: "200"
   labels:
     app.kubernetes.io/component: operator
     app.kubernetes.io/name: instana

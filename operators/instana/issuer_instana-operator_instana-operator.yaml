@@ -7,5 +7,8 @@ metadata:
     app.kubernetes.io/version: 219-0
   name: instana-operator
   namespace: instana-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "200"
+    helm.sh/hook-weight: "200"
 spec:
   selfSigned: {}

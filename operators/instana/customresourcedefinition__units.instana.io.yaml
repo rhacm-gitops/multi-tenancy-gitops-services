@@ -4,6 +4,8 @@ metadata:
   annotations:
     cert-manager.io/inject-ca-from: instana-operator/instana-operator-webhook-certs
     controller-gen.kubebuilder.io/version: v0.7.0
+    argocd.argoproj.io/sync-wave: "200"
+    helm.sh/hook-weight: "200"
   creationTimestamp: null
   name: units.instana.io
 spec:
