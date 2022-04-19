@@ -9,7 +9,7 @@ metadata:
   labels:
     app.kubernetes.io/component: operator
     app.kubernetes.io/name: instana
-    app.kubernetes.io/version: 221-0
+    app.kubernetes.io/version: 221-1
   name: instana-operator-mutating
 webhooks:
   - admissionReviewVersions:
