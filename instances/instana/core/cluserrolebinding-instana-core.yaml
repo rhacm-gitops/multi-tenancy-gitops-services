@@ -1,6 +1,6 @@
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: RoleBinding
 metadata:
   name: instana-core-anyuid
 roleRef:
@@ -16,7 +16,7 @@ subjects:
   namespace: instana-core
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: RoleBinding
 metadata:
   name: instana-core-privileged
 roleRef:
