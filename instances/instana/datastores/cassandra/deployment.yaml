@@ -21,7 +21,7 @@ spec:
       imagePullSecrets:
       - name: instana-pullsecret
       containers:
-      - image: containers.instana.io/instana/release/product/cassandra:3.11.10_v0.11.0
+      - image: containers.instana.io/instana/release/product/cassandra:3.11.10_v0.18.0
         name: cassandra
         ports:
           - containerPort: 9042
