@@ -16,7 +16,7 @@ spec:
       host: smtp.example.com
       port: 465
       useSSL: true
-  enableNetworkPolicies: false
+  # enableNetworkPolicies: false
   resourceProfile: large
   agentAcceptorConfig:
     host: ingress-instana.apps.rhacm-gitops.ibmglb.ibm-gtmaa.dev
