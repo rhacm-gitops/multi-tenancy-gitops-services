@@ -81,14 +81,12 @@ spec:
       resources:
         requests:
           storage: 2Gi
-      storageClassName: ocs-storagecluster-cephfs 
-  featureFlags: 
-    - name:  feature.beeinstana.infra.metrics.enabled
-      enabled: false
-    - name:  feature.infra.metrics.widget.enabled 
-      enabled: false
-    - name:  feature.infra.explore.presentation.enabled 
-      enabled: false
+      storageClassName: ocs-storagecluster-cephfs
+  componentConfigs:
+    - name: testing
+      properties:
+        - name: config.selfhosted.docker.aggregator.available
+          value: "false"
 # %{ if toggle("config.selfhosted.docker.aggregator.available", "false") == "true" }
 # beeInstanaConfig:
 #   host: ${ datastore.beeinstana.metrics.host }
