@@ -82,9 +82,3 @@ spec:
         requests:
           storage: 2Gi
       storageClassName: ocs-storagecluster-cephfs
-# %{ if toggle("config.selfhosted.docker.aggregator.available", "false") == "true" }
-# beeInstanaConfig:
-#   host: ${ datastore.beeinstana.metrics.host }
-#   port: ${ datastore.beeinstana.metrics.port }
-#   basePath: ${ datastore.beeinstana.metrics.base_path }
-# %{ endif }

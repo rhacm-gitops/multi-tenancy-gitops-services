@@ -9,8 +9,3 @@ spec:
   tenantName: tenant0
   unitName: unit0
   resourceProfile: large
-  componentConfigs:
-    - name: testing
-      properties:
-        - name: "config.selfhosted.docker.aggregator.available"
-          value: "false"
