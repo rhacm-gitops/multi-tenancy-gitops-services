@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "220"
     helm.sh/hook-weight: "220"
 spec:
-  baseDomain: apps.rhacm-gitops.ibmglb.ibm-gtmaa.dev
+  baseDomain: apps.multi-cluster-gitops.ibmglb.ibm-gtmaa.dev 
   imagePullSecrets:
     - name: instana-pullsecret
   emailConfig:
@@ -19,7 +19,7 @@ spec:
   # enableNetworkPolicies: false
   resourceProfile: large
   agentAcceptorConfig:
-    host: ingress-instana.apps.rhacm-gitops.ibmglb.ibm-gtmaa.dev
+    host: ingress-instana.apps.multi-cluster-gitops.ibmglb.ibm-gtmaa.dev 
     port: 443
   datastoreConfigs:
     - addresses:

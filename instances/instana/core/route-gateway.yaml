@@ -12,7 +12,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "230"
     helm.sh/hook-weight: "230"
 spec:
-  host: unit0-tenant0.apps.rhacm-gitops.ibmglb.ibm-gtmaa.dev
+  host: unit0-tenant0.apps.multi-cluster-gitops.ibmglb.ibm-gtmaa.dev 
   port:
     targetPort: 8443
   tls:

@@ -12,7 +12,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "230"
     helm.sh/hook-weight: "230"
 spec:
-  host: ingress-instana.apps.rhacm-gitops.ibmglb.ibm-gtmaa.dev
+  host: ingress-instana.apps.multi-cluster-gitops.ibmglb.ibm-gtmaa.dev 
   port:
     targetPort: 8600
   tls:
