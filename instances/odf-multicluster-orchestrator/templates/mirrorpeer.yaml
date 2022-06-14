@@ -4,6 +4,6 @@ metadata:
   name: {{ .Values.name }}
 spec:
   items:
-  {{- range $idx, $cluster := .Values.peers -}}
-  {{- include "mirror.clusterRef" $cluster | nindent 2 -}}
+  {{- range $idx, $peer := .Values.peers -}}
+  {{- include "mirror.clusterRef" $peer | nindent 2 -}}
   {{- end -}}
