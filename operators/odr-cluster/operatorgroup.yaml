@@ -1,8 +1,0 @@
-apiVersion: operators.coreos.com/v1
-kind: OperatorGroup
-metadata:
-  name: odr-cluster-operatorgroup
-  namespace: openshift-dr-system
-spec:
-  targetNamespaces:
-    - 1openshift-dr-system
