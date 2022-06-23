@@ -1,4 +1,0 @@
-# name: mirrorpeer-c1-c2
-# peers:
-# - clusterName: azure-hive-c1
-# - clusterName: azure-hive-c2
